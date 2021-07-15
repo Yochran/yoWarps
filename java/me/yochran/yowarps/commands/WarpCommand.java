@@ -1,5 +1,7 @@
 package me.yochran.yowarps.commands;
 
+import me.yochran.yowarps.gui.GUI;
+import me.yochran.yowarps.gui.guis.WarpsGUI;
 import me.yochran.yowarps.management.Warp;
 import me.yochran.yowarps.utils.Utils;
 import me.yochran.yowarps.yoWarps;
@@ -44,16 +46,9 @@ public class WarpCommand implements CommandExecutor {
             Warp.teleportToWarp((Player) sender, warp);
             sender.sendMessage(Utils.translate("&bYou have been teleported to &3" + warp.getName()));
         } else {
-            String warps = "";
-            for (Warp warp : Warp.getWarps()) {
-                if (plugin.getConfig().getBoolean("PerWarpPermissions") && !sender.hasPermission(warp.getPermission()))
-                    break;
-
-                if (warps.equalsIgnoreCase("")) warps = warp.getName();
-                else warps = warps + ", " + warp.getName();
-            }
-
-            sender.sendMessage(Utils.translate("&bWarps: &3" + warps));
+            WarpsGUI warpsGUI = new WarpsGUI((Player) sender, 18, "&8Warps List:");
+            warpsGUI.setup(1);
+            GUI.open(warpsGUI.getGui());
         }
 
         return true;

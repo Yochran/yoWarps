@@ -4,6 +4,7 @@ import me.yochran.yowarps.commands.RemovewarpCommand;
 import me.yochran.yowarps.commands.SetwarpCommand;
 import me.yochran.yowarps.commands.WarpCommand;
 import me.yochran.yowarps.data.WarpData;
+import me.yochran.yowarps.listeners.InventoryClickListener;
 import me.yochran.yowarps.management.Warp;
 import me.yochran.yowarps.utils.Utils;
 import org.bukkit.Bukkit;
@@ -29,6 +30,7 @@ public final class yoWarps extends JavaPlugin {
         registerData();
         registerPermissions();
 
+        pluginManager.registerEvents(new InventoryClickListener(), this);
         getCommand("Warp").setExecutor(new WarpCommand());
         getCommand("Setwarp").setExecutor(new SetwarpCommand());
         getCommand("Removewarp").setExecutor(new RemovewarpCommand());
