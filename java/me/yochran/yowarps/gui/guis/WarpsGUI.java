@@ -41,8 +41,8 @@ public class WarpsGUI extends CustomGUI implements PagedGUI {
                                         "&3&m---------------------",
                                         "&bWorld: &3" + warp.getLocation().getWorld().getName(),
                                         "&bX: &3" + df.format(warp.getLocation().getX()),
-                                        "&bY: &3" + df.format(warp.getLocation().getX()),
-                                        "&bZ: &3" + df.format(warp.getLocation().getX()),
+                                        "&bY: &3" + df.format(warp.getLocation().getY()),
+                                        "&bZ: &3" + df.format(warp.getLocation().getZ()),
                                         "&3&m---------------------"
                                 })
                 );
