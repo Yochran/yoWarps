@@ -1,0 +1,22 @@
+name: yoWarps
+version: ${project.version}
+main: me.yochran.yowarps.yoWarps
+api-version: 1.16
+authors: [ Yochran ]
+description: Warp plugin that adds on to yoCore.
+permissions:
+  yowarps.setwarp:
+    description: Permission.
+  yowarps.delwarp:
+    description: Permission.
+  yowarps.warp:
+    description: Permission.
+commands:
+  Warp:
+    description: Warp to a warp.
+  Setwarp:
+    description: Create a warp.
+    aliases: createwarp
+  Removewarp:
+    description: Delete a warp.
+    aliases: [delwarp, deletewarp]
